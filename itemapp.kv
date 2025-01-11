@@ -1,0 +1,34 @@
+<ItemApp>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        TextInput:
+            id: item_name
+            hint_text: "Item Name"
+            multiline: False
+
+        TextInput:
+            id: item_quantity
+            hint_text: "Item Quantity"
+            multiline: False
+
+        Button:
+            text: "Add Item"
+            on_press: app.add_item()
+
+        Button:
+            text: "Remove Item"
+            on_press: app.remove_item()
+
+        Button:
+            text: "View Items"
+            on_press: app.view_items()
+
+        ScrollView:
+            size_hint: 1, None
+            height: 200
+            Label:
+                id: item_list
+                text: ""
+                size_hint_y: None
+                height: self.texture_size[1]
